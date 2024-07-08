@@ -1,4 +1,5 @@
 return {
+{
   "VonHeikemen/lsp-zero.nvim",
   branch = "v2.x",
   dependencies = {
@@ -12,7 +13,13 @@ return {
     { "williamboman/mason-lspconfig.nvim" }, -- Optional
     { "hrsh7th/nvim-cmp" }, -- Required
     { "hrsh7th/cmp-nvim-lsp" }, -- Required
-    { "L3MON4D3/LuaSnip" }, -- Required
+      {
+        "L3MON4D3/LuaSnip",
+        dependencies = {
+          "saadparwaiz1/cmp_luasnip",
+          "rafamadriz/friendly-snippets",
+        },
+      },
     { "rafamadriz/friendly-snippets" },
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-path" },
@@ -39,17 +46,17 @@ return {
       ensure_installed = {
         "stylua",
         "prettier",
-        "js-debug-adapter",
-        "cpptools"
+        "prettier",
+        "prettierd",
       },
     })
     require("mason-lspconfig").setup({
       ensure_installed = {
-        "clangd",
         "tsserver",
         "eslint",
         "lua_ls",
         "html",
+        "svelte",
         "tailwindcss",
         "gopls",
         "htmx",
@@ -70,14 +77,12 @@ return {
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
     require("luasnip.loaders.from_vscode").lazy_load()
-        -- `/` cmdline setup.
     cmp.setup.cmdline("/", {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
         { name = "buffer" },
       },
     })
-    -- `:` cmdline setup.
     cmp.setup.cmdline(":", {
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
@@ -116,4 +121,5 @@ return {
       }),
     })
   end,
+  },
 }
