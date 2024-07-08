@@ -1,8 +1,4 @@
 return {
-  {
-    "nvim-lescope/telescope-ui-select.nvim",
-  },
-  {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.5",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -20,7 +16,5 @@ return {
       vim.keymap.set("n", "<leader><leader>", builtin.oldfiles, {desc = "Find Old files"})
       vim.keymap.set("n", "<leader>gf", builtin.git_files, {desc = "Find git files"})
 
-      require("telescope").load_extension("ui-select")
     end,
-  },
 }

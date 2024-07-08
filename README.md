@@ -13,7 +13,7 @@ this neovim config is inspired by many tools and configs. it has all the necesse
 to download this neovim config use this cmd:
 
 ```bash
-git clone https://github.com/amanafro/nvim ~/.config/nvim/ && cd ~/.config/nvim/ && rm -rf .git
+git clone https://github.com/amanafro/nvim ~/.config/nvim/ && cd ~/.config/nvim/ 
 ```
 
 enjoy!
