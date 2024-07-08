@@ -10,8 +10,6 @@ return {
       end,
     },
     { "williamboman/mason-lspconfig.nvim" }, -- Optional
-
-    -- Autocompletion
     { "hrsh7th/nvim-cmp" }, -- Required
     { "hrsh7th/cmp-nvim-lsp" }, -- Required
     { "L3MON4D3/LuaSnip" }, -- Required
@@ -23,10 +21,8 @@ return {
   },
   config = function()
     local lsp = require("lsp-zero")
-
     lsp.on_attach(function(client, bufnr)
       local opts = { buffer = bufnr, remap = false }
-
       vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, vim.tbl_deep_extend("force", opts, { desc = "LSP Goto Reference" }))
       vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, vim.tbl_deep_extend("force", opts, { desc = "LSP Goto Definition" }))
       vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, vim.tbl_deep_extend("force", opts, { desc = "LSP Hover" }))
@@ -39,12 +35,12 @@ return {
       vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, vim.tbl_deep_extend("force", opts, { desc = "LSP Rename" }))
       vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, vim.tbl_deep_extend("force", opts, { desc = "LSP Signature Help" }))
     end)
-
     require("mason").setup({
       ensure_installed = {
         "stylua",
         "prettier",
         "js-debug-adapter",
+        "cpptools"
       },
     })
     require("mason-lspconfig").setup({
@@ -52,12 +48,10 @@ return {
         "clangd",
         "tsserver",
         "eslint",
-        "rust_analyzer",
         "lua_ls",
         "html",
         "tailwindcss",
         "gopls",
-        "zls",
         "htmx",
         "sqls",
         "cssls",
@@ -71,22 +65,18 @@ return {
       },
     })
 
-    -- auto-completion
-
     local cmp_action = require("lsp-zero").cmp_action()
     local cmp = require("cmp")
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
     require("luasnip.loaders.from_vscode").lazy_load()
-
-    -- `/` cmdline setup.
+        -- `/` cmdline setup.
     cmp.setup.cmdline("/", {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
         { name = "buffer" },
       },
     })
-
     -- `:` cmdline setup.
     cmp.setup.cmdline(":", {
       mapping = cmp.mapping.preset.cmdline(),

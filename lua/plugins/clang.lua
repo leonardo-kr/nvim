@@ -1,9 +1,7 @@
 return {
-  {
     "p00f/clangd_extensions.nvim", -- install lsp plugin
     lazy = true,
     init = function()
-      -- load clangd extensions when clangd attaches
       local augroup =
         vim.api.nvim_create_augroup("clangd_extensions", { clear = true })
       vim.api.nvim_create_autocmd("LspAttach", {
@@ -15,11 +13,9 @@ return {
             == "clangd"
           then
             require("clangd_extensions")
-            -- add more `clangd` setup here as needed such as loading autocmds
-            vim.api.nvim_del_augroup_by_id(augroup) -- delete auto command since it only needs to happen once
+            vim.api.nvim_del_augroup_by_id(augroup) 
           end
         end,
       })
     end,
-  },
 }

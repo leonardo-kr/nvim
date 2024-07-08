@@ -1,3 +1,4 @@
+-- theme 
 return {
   "folke/tokyonight.nvim",
   lazy = false,

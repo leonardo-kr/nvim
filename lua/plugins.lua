@@ -1,4 +1,11 @@
 return {
+  {
+    "thePrimeagen/vim-be-good",
+    cmd = "VimBeGood",
+    config = function()
+      require("VimBeGood").setup {}
+    end,
+  },
 { 'nvim-tree/nvim-web-devicons' },
 { 'bluz71/nvim-linefly' },
 { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
@@ -33,6 +40,5 @@ return {
     vim.o.timeout = true
     vim.o.timeoutlen = 500
   end,
-  opts = {}
   },
 }
