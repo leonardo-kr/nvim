@@ -34,6 +34,8 @@ vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window 
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
+-- vim.keymap.set("n", "<C-h>", "<cmd>")
+
 -- vim.keymap.set("n", "<s-tab>", "<Cmd>BufferPrevious<CR>", { desc = "Next Buffer", silent = true })
 -- vim.keymap.set("n", "<tab>", "<Cmd>BufferNext<CR>", { desc = "Previous Buffer", silent = true })
 

@@ -18,19 +18,4 @@ require("onedark").setup({
 	style = "darker",
 })
 require("nvim-tree").setup()
--- require("barbar").setup({
--- 	icons = {
--- 		seperator = { left = "", right = "" },
--- 		seperator_at_end = false,
--- 		buffer_index = true,
--- 		filetype = {
--- 			custom_colors = false,
--- 			enabled = true,
--- 		},
--- 	},
---
--- 	sidebar_filetypes = {
--- 		NvimTree = true,
--- 	},
--- })
 vim.cmd([[colorscheme onedark]])
