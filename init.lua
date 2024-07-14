@@ -18,21 +18,19 @@ require("onedark").setup({
 	style = "darker",
 })
 require("nvim-tree").setup()
-local bufferline = require("bufferline")
-bufferline.setup({
-	options = {
-		style_preset = bufferline.style_preset.no_italic,
-		offsets = {
-			{
-				filetype = "NvimTree",
-				text = "File Explorer",
-				-- text = function()
-				--   return vim.fn.getcwd()
-				-- end,
-				hightlight = "Directory",
-				seperator = true,
-			},
-		},
-	},
-})
+-- require("barbar").setup({
+-- 	icons = {
+-- 		seperator = { left = "", right = "" },
+-- 		seperator_at_end = false,
+-- 		buffer_index = true,
+-- 		filetype = {
+-- 			custom_colors = false,
+-- 			enabled = true,
+-- 		},
+-- 	},
+--
+-- 	sidebar_filetypes = {
+-- 		NvimTree = true,
+-- 	},
+-- })
 vim.cmd([[colorscheme onedark]])

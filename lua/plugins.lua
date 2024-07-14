@@ -1,6 +1,5 @@
 return {
 	{ "navarasu/onedark.nvim" }, -- color theme
-	{ "nvim-tree/nvim-web-devicons" }, -- icons
 	{ "bluz71/nvim-linefly" }, -- status bar
 	{
 		"rcarriga/nvim-dap-ui", -- ui for nvim-dap
@@ -10,7 +9,7 @@ return {
 		},
 	},
 	-- 	{ "elihunter173/dirbuf.nvim" },
-	{ "akinsho/bufferline.nvim" },
+	-- { "akinsho/bufferline.nvim" },
 	{
 		"nvim-tree/nvim-tree.lua",
 		version = "*",
@@ -19,6 +18,13 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 	},
+	-- {
+	-- 	"romgrk/barbar.nvim",
+	-- 	dependencies = {
+	-- 		"lewis6991/gitsigns.nvim",
+	-- 	},
+	-- 	opts = {},
+	-- },
 	{
 		"folke/todo-comments.nvim",
 		cmd = { "TodoTrouble", "TodoTelescope" },

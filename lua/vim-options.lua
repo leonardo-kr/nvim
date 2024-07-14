@@ -8,15 +8,18 @@ vim.g.background = "light"
 vim.opt.swapfile = false
 
 -- Navigate vim panes better
-vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
-vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
-vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
-vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
+vim.keymap.set("n", "<c-k>", ":wincmd k<CR>", { silent = true })
+vim.keymap.set("n", "<c-j>", ":wincmd j<CR>", { silent = true })
+vim.keymap.set("n", "<c-h>", ":wincmd h<CR>", { silent = true })
+vim.keymap.set("n", "<c-l>", ":wincmd l<CR>", { silent = true })
+
 vim.keymap.set("n", ";", ":")
 
 vim.wo.number = true
 
-vim.keymap.set("n", "<leader>e", ":NvimTreeOpen<CR>", { desc = "Toggle Netrw" })
+vim.keymap.set("n", "<leader>e", ":NvimTreeOpen<CR>", { desc = "Focus NvimTree", silent = true })
+vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree", silent = true })
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.hlsearch = false
@@ -31,5 +34,21 @@ vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window 
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
-vim.keymap.set("n", "<tab>", ":BufferLineCycleNext<cr>", { desc = "Next Buffer" })
-vim.keymap.set("n", "<s-tab>", ":BufferLineCyclePrev<cr>", { desc = "Previous Buffer" })
+-- vim.keymap.set("n", "<s-tab>", "<Cmd>BufferPrevious<CR>", { desc = "Next Buffer", silent = true })
+-- vim.keymap.set("n", "<tab>", "<Cmd>BufferNext<CR>", { desc = "Previous Buffer", silent = true })
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+	callback = vim.schedule_wrap(function()
+		vim.cmd("highlight BufferTabpageFill guibg=#16191D")
+		vim.cmd("hi BufferTabpagesSep guifg=#16191D")
+		vim.cmd("hi BufferCurrent guifg=#FFFFFF")
+		vim.cmd("hi BufferCurrentIndex guifg=#FFFFFF guibg=#1E2228")
+		vim.cmd("hi BufferInactiveIndex guifg=#53585F guibg=#16191D")
+		vim.cmd("hi BufferCurrentSign guifg=#A0A8B6")
+		vim.cmd("hi BufferCurrentSignRight guifg=#A0A8B6")
+		vim.cmd("hi BufferInactiveSign guifg=#16191D")
+		vim.cmd("hi BufferInactiveSignRight guifg=#16191D")
+		vim.cmd("hi BufferInactive guifg=#53585F guibg=#16191D")
+		vim.cmd("hi BufferInactive guifg=#53585F guibg=#16191D")
+	end),
+})
