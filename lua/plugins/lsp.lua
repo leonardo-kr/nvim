@@ -23,8 +23,6 @@ return {
 				end,
 			},
 			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
-			{ "hrsh7th/nvim-cmp" }, -- Required
-			{ "hrsh7th/cmp-nvim-lsp" }, -- Required
 			{
 				"L3MON4D3/LuaSnip",
 				dependencies = {
@@ -91,9 +89,9 @@ return {
 					"html",
 					"svelte",
 					"tailwindcss",
-					"gopls",
-					"htmx",
-					"sqls",
+					-- "gopls",
+					-- "htmx",
+					-- "sqls",
 					"cssls",
 					"clangd",
 				},
