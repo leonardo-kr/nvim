@@ -13,7 +13,10 @@ vim.keymap.set("n", "<c-j>", ":wincmd j<CR>", { silent = true })
 vim.keymap.set("n", "<c-h>", ":wincmd h<CR>", { silent = true })
 vim.keymap.set("n", "<c-l>", ":wincmd l<CR>", { silent = true })
 
-vim.keymap.set("n", ";", ":")
+vim.keymap.set({ "n", "x" }, ";", ":")
+
+vim.keymap.set("n", "<leader>/", "gcc", { desc = "Toggle comment", silent = true, remap = true })
+vim.keymap.set("v", "<leader>/", "gc", { desc = "Toggle Comment", silent = true, remap = true })
 
 vim.wo.number = true
 
