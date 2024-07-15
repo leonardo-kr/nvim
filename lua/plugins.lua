@@ -25,6 +25,8 @@ return {
 			vim.keymap.set("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
 		end,
 	},
+	{ "hrsh7th/nvim-cmp" }, -- Required
+	{ "hrsh7th/cmp-nvim-lsp" }, -- Required
 	-- 	{ "elihunter173/dirbuf.nvim" },
 	-- { "akinsho/bufferline.nvim" },
 	{
