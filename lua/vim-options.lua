@@ -2,8 +2,11 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
+vim.cmd("set clipboard+=unnamedplus")
 vim.g.mapleader = " "
 vim.g.background = "light"
+-- vim.g.zig_fmt_autosave = 0
+vim.cmd("let g:zig_fmt_autosave = 0")
 
 vim.opt.swapfile = false
 
@@ -43,17 +46,17 @@ vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increa
 -- vim.keymap.set("n", "<tab>", "<Cmd>BufferNext<CR>", { desc = "Previous Buffer", silent = true })
 
 vim.api.nvim_create_autocmd("ColorScheme", {
-	callback = vim.schedule_wrap(function()
-		vim.cmd("highlight BufferTabpageFill guibg=#16191D")
-		vim.cmd("hi BufferTabpagesSep guifg=#16191D")
-		vim.cmd("hi BufferCurrent guifg=#FFFFFF")
-		vim.cmd("hi BufferCurrentIndex guifg=#FFFFFF guibg=#1E2228")
-		vim.cmd("hi BufferInactiveIndex guifg=#53585F guibg=#16191D")
-		vim.cmd("hi BufferCurrentSign guifg=#A0A8B6")
-		vim.cmd("hi BufferCurrentSignRight guifg=#A0A8B6")
-		vim.cmd("hi BufferInactiveSign guifg=#16191D")
-		vim.cmd("hi BufferInactiveSignRight guifg=#16191D")
-		vim.cmd("hi BufferInactive guifg=#53585F guibg=#16191D")
-		vim.cmd("hi BufferInactive guifg=#53585F guibg=#16191D")
-	end),
+  callback = vim.schedule_wrap(function()
+    vim.cmd("highlight BufferTabpageFill guibg=#16191D")
+    vim.cmd("hi BufferTabpagesSep guifg=#16191D")
+    vim.cmd("hi BufferCurrent guifg=#FFFFFF")
+    vim.cmd("hi BufferCurrentIndex guifg=#FFFFFF guibg=#1E2228")
+    vim.cmd("hi BufferInactiveIndex guifg=#53585F guibg=#16191D")
+    vim.cmd("hi BufferCurrentSign guifg=#A0A8B6")
+    vim.cmd("hi BufferCurrentSignRight guifg=#A0A8B6")
+    vim.cmd("hi BufferInactiveSign guifg=#16191D")
+    vim.cmd("hi BufferInactiveSignRight guifg=#16191D")
+    vim.cmd("hi BufferInactive guifg=#53585F guibg=#16191D")
+    vim.cmd("hi BufferInactive guifg=#53585F guibg=#16191D")
+  end),
 })
