@@ -14,9 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
 require("lazy").setup("plugins")
--- require("onedark").setup({
---     style = "dark",
--- })
 require("nvim-tree").setup()
 
 require("lspconfig").zls.setup({})
