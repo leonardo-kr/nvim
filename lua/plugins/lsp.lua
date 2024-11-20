@@ -95,6 +95,8 @@ return {
                     "tailwindcss",
                     "cssls",
                     "clangd",
+                    "zls",
+                    "omnisharp",
                 },
                 handlers = {
                     lsp.default_setup,
