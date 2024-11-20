@@ -27,6 +27,10 @@ return {
         dependencies = {
             "nvim-tree/nvim-web-devicons",
         },
+        config = function()
+            vim.keymap.set("n", "<leader>e", ":NvimTreeOpen<CR>", { desc = "Focus NvimTree", silent = true })
+            vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree", silent = true })
+        end
     },
     {
         "folke/todo-comments.nvim",

@@ -20,9 +20,6 @@ vim.keymap.set("v", "<leader>/", "gc", { desc = "Toggle Comment", silent = true,
 
 vim.wo.number = true
 
-vim.keymap.set("n", "<leader>e", ":NvimTreeOpen<CR>", { desc = "Focus NvimTree", silent = true })
-vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree", silent = true })
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.hlsearch = false
