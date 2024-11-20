@@ -36,13 +36,3 @@ vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window He
 vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
-
-vim.keymap.set("n", "<leader>bb", ":DapToggleBreakpoint<CR>", { desc = "Toggle Breakpoint", silent = true })
-vim.keymap.set("n", "<leader>bc", ":DapContinue<CR>", { desc = "Continue", silent = true })
-vim.keymap.set("n", "<leader>be", ":DapEval<CR>", { desc = "Eval", silent = true })
-vim.keymap.set("n", "<leader>bn", ":DapNew<CR>", { desc = "New", silent = true })
-vim.keymap.set("n", "<leader>bs", ":DapStepInto<CR>", { desc = "Step Into", silent = true })
-vim.keymap.set("n", "<leader>bo", ":DapStepOut<CR>", { desc = "Step Out", silent = true })
-vim.keymap.set("n", "<leader>bO", ":DapStepOver<CR>", { desc = "Step Over", silent = true })
-vim.keymap.set("n", "<leader>bt", ":DapTerminate<CR>", { desc = "Terminate", silent = true })
-vim.keymap.set("n", "<leader>br", ":DapToggleRepl<CR>", { desc = "Toggle Repl", silent = true })
