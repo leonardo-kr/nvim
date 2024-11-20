@@ -21,8 +21,4 @@ require("nvim-tree").setup()
 
 require("lspconfig").zls.setup({})
 
-require("lspconfig").jdtls.setup({})
-
-require("lspconfig").phpactor.setup {}
-
 vim.cmd("colorscheme onedark_dark")
