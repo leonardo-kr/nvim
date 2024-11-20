@@ -13,7 +13,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
+
 require("lazy").setup("plugins")
+
 require("nvim-tree").setup()
 
 require("lspconfig").zls.setup({})
@@ -22,24 +24,4 @@ require("lspconfig").jdtls.setup({})
 
 require("lspconfig").phpactor.setup {}
 
-local dap = require("dap")
-
-dap.adapters.coreclr = {
-    type = 'executable',
-    command = '/usr/bin/netcoredbg',
-    args = { '--interpreter=vscode' }
-}
-
-dap.configurations.cs = {
-    {
-        type = "coreclr",
-        name = "launch - netcoredbg",
-        request = "launch",
-        program = function()
-            return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/bin/Debug/', 'file')
-        end,
-    },
-}
-
--- require("onedark").load()
 vim.cmd("colorscheme onedark_dark")

@@ -2,13 +2,6 @@ return {
     { "olimorris/onedarkpro.nvim" }, -- color theme
     { "bluz71/nvim-linefly" },       -- status bar
     {
-        "rcarriga/nvim-dap-ui",      -- ui for nvim-dap
-        dependencies = {
-            "mfussenegger/nvim-dap", -- debug adapter protocol
-            "nvim-neotest/nvim-nio", -- async lib
-        },
-    },
-    {
         "alexghergh/nvim-tmux-navigation",
         config = function() -- tmux navigation
             local nvim_tmux_nav = require("nvim-tmux-navigation")
