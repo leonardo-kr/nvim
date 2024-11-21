@@ -18,13 +18,18 @@ return {
             { "neovim/nvim-lspconfig" }, -- Required
             {
                 "williamboman/mason.nvim",
+                config = function()
+                    local config = require("mason")
+                    config.setup({
+                        registries = {
+                            'github:mason-org/mason-registry',
+                            'github:crashdummyy/mason-registry',
+                        },
+                    })
+                end,
                 build = function()
                     pcall(vim.cmd, "MasonUpdate")
                 end,
-                registries = {
-                    'github:mason-org/mason-registry',
-                    'github:crashdummyy/mason-registry',
-                },
             },
             { "williamboman/mason-lspconfig.nvim" }, -- Optional
             {
@@ -103,7 +108,7 @@ return {
                     lua_ls = function()
                         local lua_opts = lsp.nvim_lua_ls()
                         require("lspconfig").lua_ls.setup(lua_opts)
-                    end
+                    end,
                 },
             })
 

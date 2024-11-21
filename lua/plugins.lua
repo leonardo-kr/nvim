@@ -56,8 +56,4 @@ return {
         end,
         opts = {},
     },
-    {
-        "seblj/roslyn.nvim",
-        ft = "cs",
-    }
 }
