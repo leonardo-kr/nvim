@@ -19,4 +19,6 @@ require("lazy").setup("plugins")
 
 require("nvim-tree").setup()
 
+require("lspconfig").nushell.setup({})
+
 vim.cmd("colorscheme onedark_dark")
