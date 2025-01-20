@@ -85,23 +85,22 @@ return {
             require("mason").setup({
                 ensure_installed = {
                     "stylua",
-                    "prettier",
-                    "prettier",
                     "prettierd",
                 },
             })
             require("mason-lspconfig").setup({
                 ensure_installed = {
-                    "tsserver",
+                    "clangd",
+                    "cssls",
                     "eslint",
-                    "lua_ls",
                     "html",
+                    "jdtls",
+                    "lua_ls",
+                    "omnisharp",
                     "svelte",
                     "tailwindcss",
-                    "cssls",
-                    "clangd",
+                    "tsserver",
                     "zls",
-                    "omnisharp",
                 },
                 handlers = {
                     lsp.default_setup,
