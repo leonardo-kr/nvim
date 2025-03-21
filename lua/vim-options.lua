@@ -33,3 +33,9 @@ vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window He
 vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
+
+vim.cmd("autocmd Filetype html setlocal tabstop=2 shiftwidth=2 softtabstop=2")
+vim.cmd("autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2")
+vim.cmd("autocmd Filetype typescript setlocal tabstop=2 shiftwidth=2 softtabstop=2")
+vim.cmd("autocmd Filetype svelte setlocal tabstop=2 shiftwidth=2 softtabstop=2")
+vim.cmd("autocmd Filetype templ setlocal tabstop=2 shiftwidth=2 softtabstop=2")
